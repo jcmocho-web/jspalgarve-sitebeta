@@ -1,91 +1,63 @@
-<!DOCTYPE html>
-<html lang="pt">
+<!DOCTYPE html> 
+<html lang="pt"> 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contacto – JSP Algarve</title>
-
-  <!-- Ícones & PWA -->
   <link rel="icon" href="favicon.ico">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#1f4fd1">
-
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="assets/logo.png" class="logo" alt="JSP Algarve"></a>
-      <nav class="nav">
-        <a href="index.html">Início</a>
-        <a href="assistencia.html">Assistência Remota</a>
-        <a class="active" href="contacto.html">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="section container">
-    <h1>Formulário de Contacto</h1>
-
-    <form class="form" action="/api/contact" method="POST">
-
-      <div class="grid">
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" required>
-        </div>
-
-        <div class="field">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-
-        <div class="field">
-          <label for="telefone">Telefone</label>
-          <input id="telefone" name="telefone" type="text" required>
-        </div>
-
-        <div class="field full">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
-        </div>
-      </div>
-
-      <!-- Anti‑spam -->
-      <input type="text" name="hp" style="display:none">
-      <input type="hidden" id="load_time" name="load_time" value="">
-
-      <script>
-        window.addEventListener("load", () => {
-          document.getElementById("load_time").value = Date.now();
-        });
-
-        function validateTime() {
-          const load = parseInt(document.getElementById("load_time").value);
-          if (!load || !Number.isFinite(load)) return true;
-          if (Date.now() - load < 3000) {
-            alert("Por favor aguarde 3 segundos antes de enviar.");
-            return false;
-          }
-          return true;
-        }
-      </script>
-
-      <button class="btn btn-primary" type="submit" onclick="return validateTime()">Enviar</button>
-    </form>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> JSP Algarve. Todos os direitos reservados.</p>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-</body>
+ 
+ <link rel="icon" href="favicon.ico"> 
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <title>Contacto – JSP Algarve</title> 
+ <link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+ <header class="site-header"> 
+ <div class="container header-inner"> 
+ <a class="brand" href="index.html"><img src="assets/logo.png" alt="Logótipo JSP Algarve" class="logo"></a> 
+ <nav class="nav"> 
+ <a href="index.html">Início</a> 
+ <a href="assistencia.html">Assistência Remota</a> 
+ <a class="active" href="contacto.html">Contacto</a> 
+ </nav> 
+ </div> 
+ </header> 
+ <main class="section container"> 
+ <h1>Formulário de Contacto</h1> 
+ <form class="form" action="/api/contact" method="POST"> 
+ <input type="hidden" name="_captcha" value="true"> 
+ <input type="hidden" name="_subject" value="[Site JSP Algarve] Novo pedido de contacto"> 
+ <input type="hidden" name="_next" value="/obrigado.html"> 
+ <div class="grid"> 
+ <div class="field"> 
+ <label for="nome">Nome</label> 
+ <input id="nome" name="nome" type="text" required> 
+ </div> 
+ <div class="field"> 
+ <label for="email">Email</label> 
+ <input id="email" name="email" type="email" required> 
+ </div> 
+ <div class="field"> 
+ <label for="telefone">Telefone</label> 
+ <input id="telefone" name="telefone" type="text" required> 
+ </div> 
+ <div class="field full"> 
+ <label for="mensagem">Mensagem</label> 
+ <textarea id="mensagem" name="mensagem" rows="6" required></textarea> 
+ </div> 
+ </div> 
+ <input type='text' name='hp' style='display:none'> 
+ <input type='hidden' id='load_time' name='load_time' value=''> 
+ <script> 
+ const start=Date.now(); 
+ document.addEventListener('DOMContentLoaded',()=>{document.getElementById('load_time').value=start}); 
+ function validateTime(){const load=parseInt(document.getElementById('load_time').value);if(Date.now()-load<3000){alert('Por favor aguarde 3 segundos antes de enviar.');return false}return true} 
+ </script> 
+ <button class="btn btn-primary" type="submit" onclick="return validateTime()">Enviar</button> 
+ </form> 
+ </main> 
+ <footer class="site-footer"><div class="container"><p>© <span id="year"></span> JSP Algarve. Todos os direitos reservados.</p></div></footer> 
+ <script>document.getElementById('year').textContent=new Date().getFullYear();</script> 
+</body> 
 </html>
