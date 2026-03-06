@@ -1,0 +1,5 @@
+﻿{
+  "Description": "Domain ownership verification file for Microsoft 365 - place in the website root",
+  "Domain": "jspalgarve.pt",
+  "Id": "aed66f30-65e7-4690-944d-94ebdb888711"
+}

@@ -1,0 +1,30 @@
+<?php exit; ?>
+d119b98995a013930853a27ee15af13d68691017
+{
+    "plugin_version": "PhastPress-3.6-8",
+    "servicesUrl": "https://jspalgarve.pt/wp-content/plugins/phastpress/phast.php",
+    "securityToken": "lr7K4Wl+IJDwEkieZyPG8u0yICD8vLdwWLbILg==",
+    "images": {
+        "filters": {
+            "Kibo\\Phast\\Filters\\Image\\ImageAPIClient\\Filter": {
+                "enabled": true,
+                "plugin-version": "PhastPress-3.6-8"
+            }
+        }
+    },
+    "styles": {
+        "filters": {
+            "Kibo\\Phast\\Filters\\CSS\\ImageURLRewriter\\Filter": {
+                "enabled": true
+            }
+        }
+    },
+    "serviceRequestFormat": 2,
+    "compressServiceResponse": true,
+    "cdnHost": "jspalgarve.pt",
+    "alternativeServicesUrls": {
+        "https://mail.jspalgarve.pt:443": "https://jspalgarve.pt/wp-content/plugins/phastpress/phast.php",
+        "https://www.jspalgarve.pt:443": "https://jspalgarve.pt/wp-content/plugins/phastpress/phast.php",
+        "https://jspalgarve.pt:443": "https://jspalgarve.pt/wp-content/plugins/phastpress/phast.php"
+    }
+}

