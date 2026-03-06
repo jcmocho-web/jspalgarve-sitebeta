@@ -1,5 +1,0 @@
-[25-Aug-2025 14:43:03 UTC] PHP Warning:  require_once(/home/jspalgar/public_html/joomla310/administrator/includes/defines.php): Failed to open stream: No such file or directory in /home/jspalgar/public_html/joomla310/sapp-wp-signon.php on line 20
-[25-Aug-2025 14:43:03 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/jspalgar/public_html/joomla310/administrator/includes/defines.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/jspalgar/public_html/joomla310/sapp-wp-signon.php:20
-Stack trace:
-#0 {main}
-  thrown in /home/jspalgar/public_html/joomla310/sapp-wp-signon.php on line 20
