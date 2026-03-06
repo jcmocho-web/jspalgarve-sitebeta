@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jspalgarve.pt/sitemap.xml
